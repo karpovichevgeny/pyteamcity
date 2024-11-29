@@ -56,7 +56,7 @@ def _build_url(*args, **kwargs):
 
 def get_default_kwargs(func):
     """Returns a sequence of tuples (kwarg_name, default_value) for func"""
-    argspec = inspect.getargspec(func)
+    argspec = inspect.getfullargspec(func)
     if not argspec.defaults:
         return []
     return zip(argspec.args[-len(argspec.defaults):],
